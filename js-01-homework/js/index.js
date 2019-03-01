@@ -1,6 +1,6 @@
-const a = parseInt(prompt('Enter value for "a"'));
-const b = parseInt(prompt('Enter value for "b"'));
-const c = parseInt(prompt('Enter value for "c"'));
+const a = parseFloat(prompt('Enter value for "a"'));
+const b = parseFloat(prompt('Enter value for "b"'));
+const c = parseFloat(prompt('Enter value for "c"'));
 
 function calcDiscr(a, b, c) {
   return b * b - 4 * a * c;
