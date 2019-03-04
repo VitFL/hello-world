@@ -32,8 +32,8 @@ function fibonacciArr(num) {
 }
 
 function fibonacciBinet(number) {
-  var sqrtOfFive = Math.sqrt(5);
-  var Phi = (1 + sqrtOfFive) / 2;
-  var phi = (1 - sqrtOfFive) / 2;
+  const sqrtOfFive = Math.sqrt(5);
+  const Phi = (1 + sqrtOfFive) / 2;
+  const phi = (1 - sqrtOfFive) / 2;
   return Math.round((Math.pow(Phi, number) - Math.pow(phi, number)) / sqrtOfFive);
 }
