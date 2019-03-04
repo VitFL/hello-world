@@ -24,7 +24,7 @@ function fibonacciRecursion(num) {
 }
 
 function fibonacciArr(num) {
-  let fibNums = [1, 1];
+  const fibNums = [1, 1];
   for (let i = 2; i < n + 1; i++) {
     fibNums.push(fibNums[i - 2] + fibNums[i - 1]);
   }
