@@ -5,7 +5,7 @@ const dot = document.querySelector('.dot');
 const equal = document.querySelector('.equal');
 const backspace = document.querySelector('.backspace');
 const clear = document.querySelector('.clear');
-const endsWithSymbol = () => [dot, ...operators].some(symbol => display.value.endsWith(symbol.innerText));
+const endsWithSymbol = () => ['.', '%', '-', '+', '*', '/'].some(symbol => display.value.endsWith(symbol));
 
 digits.forEach(digit => digit.addEventListener('click', () => (display.value += digit.innerText)));
 
