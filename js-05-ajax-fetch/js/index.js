@@ -41,10 +41,8 @@ document.querySelector('.update-currency').addEventListener('click', getCurrency
 
 function getCurrency() {
   fetch('https://free.currencyconverterapi.com/api/v6/convert?q=USD_UAH&compact=ultra&apiKey=4a1ba61258aa4c382d53')
-      .then(response => response.json())
-      .then(currency => document.querySelector('.currency-container')
-          .innerText = currency['USD_UAH']);
-}
+    .then(response => response.json())
+    .then(currency => (document.querySelector('.currency-container').innerText = currency['USD_UAH']));
 
   // AJAX below:
   // const xhr = new XMLHttpRequest();
