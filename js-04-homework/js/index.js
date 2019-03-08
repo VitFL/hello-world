@@ -25,7 +25,7 @@ dot.addEventListener('click', () => {
 });
 
 equal.addEventListener('click', () => {
-  if (!endsWithSymbol()) display.value = eval(display.value);
+  if (!endsWithSymbol() && display.value) display.value = eval(display.value);
 });
 
 backspace.addEventListener('click', () => (display.value = display.value.slice(0, -1)));
