@@ -3,20 +3,31 @@ const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
 const dot = document.querySelector('.dot');
 const equal = document.querySelector('.equal');
+const backspace = document.querySelector('.backspace');
 const clear = document.querySelector('.clear');
-const endsWithSybmol = () => [dot, ...operators].some(symbol => display.value.endsWith(symbol.innerText));
+const endsWithSymbol = () => [dot, ...operators].some(symbol => display.value.endsWith(symbol.innerText));
 
 digits.forEach(digit => digit.addEventListener('click', () => (display.value += digit.innerText)));
-operators.forEach(operator => operator.addEventListener('click', addOperator));
-dot.addEventListener('click', () => {
-  if (!endsWithSybmol()) display.value += '.';
-});
-equal.addEventListener('click', () => {
-  if (!endsWithSybmol()) display.value = eval(display.value);
-});
-clear.addEventListener('click', () => (display.value = ''));
 
-function addOperator(e) {
-  if (e.target.innerText !== '-' && !display.value) return;
-  !endsWithSybmol() ? (display.value += e.target.innerText) : (display.value = display.value.slice(0, -1) + e.target.innerText);
-}
+operators.forEach(operator =>
+  operator.addEventListener('click', e => {
+    if (e.target.innerText !== '-' && !display.value) return;
+    if (!endsWithSymbol()) {
+      display.value += e.target.innerText;
+    } else if (display.value.length > 1) {
+      display.value = display.value.slice(0, -1) + e.target.innerText;
+    }
+  })
+);
+
+dot.addEventListener('click', () => {
+  if (!endsWithSymbol()) display.value += '.';
+});
+
+equal.addEventListener('click', () => {
+  if (!endsWithSymbol()) display.value = eval(display.value);
+});
+
+backspace.addEventListener('click', () => (display.value = display.value.slice(0, -1)));
+
+clear.addEventListener('click', () => (display.value = ''));
