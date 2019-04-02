@@ -88,3 +88,8 @@ console.log(even);
 // [1, 2, 3, 33, 44, 42, 5]
 const sum = odds.reduce((acc, el) => acc + el, 0);
 console.log(sum);
+
+(function() {
+  kittySays = 'Meow';
+})();
+console.log(kittySays);
